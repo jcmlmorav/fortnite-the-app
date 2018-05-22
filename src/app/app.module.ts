@@ -9,7 +9,10 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { AccordionModule } from 'ngx-accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material';
+
+// import { AccordionModule } from 'ngx-accordion';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { AccordionModule } from 'ngx-accordion';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AccordionModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

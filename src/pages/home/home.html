@@ -15,22 +15,19 @@
   <img src="https://cdn2.unrealengine.com/Fortnite%2FBattle-pass%2Fseason4%2FPassPage%2FHeader%2FheroLineup-2166x1532-5b9eb76d1ab665e9ec583fa22ed9b914b2e4d02d.jpg" alt="Season 4">
   
   <div class="season-content" padding>
-    <accordion>
-      <accordion-group heading="About me" >
-          Its all about me.
-      </accordion-group>
-      <accordion-group heading="Contacts">
-          This is content of the contacts
-      </accordion-group>
-      <accordion-group heading="Map">
-          Content of the Map
-      </accordion-group>
-      <accordion-group>
-          <accordion-heading>
-              Custom heading
-          </accordion-heading>
-          Its all about me.
-      </accordion-group>
-    </accordion>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          This is the expansion 1 title
+        </mat-expansion-panel-header>
+        This the expansion 1 content
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          This is the expansion 2 title
+        </mat-expansion-panel-header>
+        This the expansion 2 content
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 </ion-content>

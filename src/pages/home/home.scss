@@ -1,3 +1,13 @@
 page-home {
+  .season-title {
+    margin-bottom: 0;
+    position: absolute;
+    text-transform: uppercase;
 
+    span {
+      background-color: color($colors, primary);
+      font-family: Burbank, sans-serif;
+      padding: 15px 30px;
+    }
+  }
 }

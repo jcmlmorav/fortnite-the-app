@@ -13,6 +13,10 @@ import { AccordionModule } from 'ngx-accordion';
 import { PrismicProvider } from '../providers/prismic/prismic';
 
 import { HttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material';
+
+// import { AccordionModule } from 'ngx-accordion';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { HttpClient } from '@angular/common/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AccordionModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

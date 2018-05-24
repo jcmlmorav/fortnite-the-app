@@ -10,6 +10,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AccordionModule } from 'ngx-accordion';
+import { PrismicProvider } from '../providers/prismic/prismic';
+
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { AccordionModule } from 'ngx-accordion';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PrismicProvider,
+    HttpClient
   ]
 })
 export class AppModule {}

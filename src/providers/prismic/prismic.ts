@@ -14,11 +14,13 @@ export class PrismicProvider  {
 
   apiEndpoint:string = 'https://fortnite-week-mission-app.cdn.prismic.io/api/v2';
 
-  getDocuments() {    	
+  getDocumentsByType(type:any) {    	
     return Prismic.getApi(this.apiEndpoint).then(function(api:any) {
-      return api.query(); // An empty query will return all the documents
+      return api.query(
+        Prismic.Predicates.at('document.type', type)
+      );
     }).then(function(response) {          
-      return response;         
+      return response.results;         
     }, function(err) {
       console.log("Something went wrong: ", err);
     });

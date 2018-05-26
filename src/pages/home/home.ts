@@ -1,28 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PrismicProvider } from '../../providers/prismic/prismic';
-import { LowerCasePipe } from '@angular/common';
+//import { LowerCasePipe } from '@angular/common';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  data:any = [];
-
-  constructor(public navCtrl: NavController, public prismic: PrismicProvider) {
-    
-    this.getData();
-    
-    
-    
+  
+  constructor(public navCtrl: NavController, public prismic: PrismicProvider) {    
+    this.getSeason();            
   }
 
-  getData(): void {
-    this.prismic.getDocuments()
-    .then(response => {
-      console.log(response.map(data =));
-      
+  seasons:any[] = [];
+
+  getSeason(): void {
+    this.prismic.getDocumentsByType('season')
+    .then(response => {      
+      this.seasons = response;       
+      console.log(this.seasons[0].data);      
     });
   }
 

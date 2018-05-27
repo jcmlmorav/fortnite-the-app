@@ -4,25 +4,24 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { AboutPage } from '../pages/about/about';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { AccordionModule } from 'ngx-accordion';
 import { PrismicProvider } from '../providers/prismic/prismic';
 
 import { HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material';
 
-// import { AccordionModule } from 'ngx-accordion';
+import { AdMobPro } from '@ionic-native/admob-pro';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    AboutPage
   ],
   imports: [
     BrowserModule,
@@ -34,11 +33,12 @@ import { MatExpansionModule } from '@angular/material';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    AboutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AdMobPro,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PrismicProvider,
     HttpClient

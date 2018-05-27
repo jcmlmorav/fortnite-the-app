@@ -28,7 +28,7 @@ export class HomePage {
 
       this.admob.createBanner({
           adId: admobid.banner,
-          isTesting: true,
+          isTesting: false,
           autoShow: true,
           position: this.admob.AD_POSITION.BOTTOM_CENTER
       });

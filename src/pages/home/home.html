@@ -21,11 +21,12 @@
           {{ season.data.name_to_show }}
         </mat-expansion-panel-header>
         <ion-list>
-          <ion-item *ngFor="let singleChallenge of season.data['challenges']">
-            <ion-icon name="star" color="secondary" item-start></ion-icon>
+          <ion-item text-wrap *ngFor="let singleChallenge of season.data['challenges']">
+            <!-- <ion-icon name="star" color="secondary" item-start></ion-icon> -->
             <h2>{{ singleChallenge.challenge }}</h2>
             <p><strong>Difficult:</strong> {{ singleChallenge.difficult }}</p>
-            <ion-icon name="eye" color="secondary" item-end></ion-icon>
+            <p><strong>Reward:</strong> {{ singleChallenge.reward }}</p>
+            <!-- <ion-icon name="eye" color="secondary" item-end></ion-icon> -->
           </ion-item>
         </ion-list>
       </mat-expansion-panel>

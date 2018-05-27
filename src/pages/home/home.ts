@@ -19,7 +19,6 @@ export class HomePage {
     this.prismic.getDocumentsByType('season')
     .then(response => {      
       this.seasons = response;       
-      console.log(this.seasons[0].data);      
     });
   }
 

@@ -17,7 +17,8 @@ export class PrismicProvider  {
   getDocumentsByType(type:any) {    	
     return Prismic.getApi(this.apiEndpoint).then(function(api:any) {
       return api.query(
-        Prismic.Predicates.at('document.type', type)
+        Prismic.Predicates.at('document.type', type),
+        { orderings : '[document.first_publication_date]' }
       );
     }).then(function(response) {          
       return response.results;         

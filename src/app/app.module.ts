@@ -12,7 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material';
 
-// import { AccordionModule } from 'ngx-accordion';
+import { AdMobPro } from '@ionic-native/admob-pro';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { MatExpansionModule } from '@angular/material';
   providers: [
     StatusBar,
     SplashScreen,
+    AdMobPro,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

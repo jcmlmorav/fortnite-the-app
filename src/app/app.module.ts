@@ -9,6 +9,9 @@ import { AboutPage } from '../pages/about/about';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { PrismicProvider } from '../providers/prismic/prismic';
+
+import { HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material';
 
@@ -36,7 +39,9 @@ import { AdMobPro } from '@ionic-native/admob-pro';
     StatusBar,
     SplashScreen,
     AdMobPro,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PrismicProvider,
+    HttpClient
   ]
 })
 export class AppModule {}

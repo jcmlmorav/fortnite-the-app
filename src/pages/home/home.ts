@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PrismicProvider } from '../../providers/prismic/prismic';
 
 import { AdMobPro } from '@ionic-native/admob-pro';
 import { Platform } from 'ionic-angular';
@@ -10,11 +11,16 @@ import { Platform } from 'ionic-angular';
 })
 export class HomePage {
 
+  seasons:any[] = [];
+  
   constructor(
     public navCtrl: NavController,
+    public prismic: PrismicProvider,
     platform: Platform,
     private admob: AdMobPro
   ) {
+    this.getSeason();
+
     platform.ready().then(() => {
       var admobid = {
           banner: 'ca-app-pub-5032531825945091/6954605640'
@@ -26,6 +32,13 @@ export class HomePage {
           autoShow: true,
           position: this.admob.AD_POSITION.BOTTOM_CENTER
       });
+    });
+  }
+
+  getSeason(): void {
+    this.prismic.getDocumentsByType('season')
+    .then(response => {
+      this.seasons = response;
     });
   }
 

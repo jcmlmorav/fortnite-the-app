@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PrismicProvider } from '../../providers/prismic/prismic';
 
-import { AdMobPro } from '@ionic-native/admob-pro';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 import { Platform } from 'ionic-angular';
 
 @Component({
@@ -17,29 +17,30 @@ export class HomePage {
     public navCtrl: NavController,
     public prismic: PrismicProvider,
     platform: Platform,
-    private admob: AdMobPro
+    private admobFree: AdMobFree
   ) {
     this.getSeason();
 
     platform.ready().then(() => {
-      var admobid = {
-          banner: 'ca-app-pub-5032531825945091/6954605640'
+      const bannerConfig: AdMobFreeBannerConfig = {
+        // add your config here
+        // for the sake of this example we will just use the test config
+        id: 'ca-app-pub-5032531825945091/6954605640',
+        isTesting: true,
+        autoShow: true
       };
-
-      this.admob.createBanner({
-          adId: admobid.banner,
-          isTesting: false,
-          autoShow: true,
-          position: this.admob.AD_POSITION.BOTTOM_CENTER
-      });
-    });
+      this.admobFree.banner.config(bannerConfig);
+      
+      this.admobFree.banner.prepare().catch(e => {console.log(e)});
+    }).catch(e => {console.log(e)});;
   }
 
   getSeason(): void {
     this.prismic.getDocumentsByType('season')
     .then(response => {
       this.seasons = response;
-    });
+    })
+    .catch(e => {console.log(e)});
   }
 
 }

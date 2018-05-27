@@ -15,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material';
 
-import { AdMobPro } from '@ionic-native/admob-pro';
+import { AdMobFree } from '@ionic-native/admob-free';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { AdMobPro } from '@ionic-native/admob-pro';
   providers: [
     StatusBar,
     SplashScreen,
-    AdMobPro,
+    AdMobFree,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PrismicProvider,
     HttpClient

@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <h2 class="season-title">
-    <span>Season 4</span>
+  <h2 *ngIf="season" class="season-title">
+    <span>Season {{ season.current_season }}</span>
   </h2>
 
-  <img src="https://cdn2.unrealengine.com/Fortnite%2FBattle-pass%2Fseason4%2FPassPage%2FHeader%2FheroLineup-2166x1532-5b9eb76d1ab665e9ec583fa22ed9b914b2e4d02d.jpg" alt="Season 4">
+  <img *ngIf="season" src="{{ season.image.url }}" alt="Season {{ season.current_season }}">
   
   <div class="season-content" padding>
     <mat-accordion>

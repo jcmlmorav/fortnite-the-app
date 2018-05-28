@@ -11,7 +11,8 @@ import { Platform } from 'ionic-angular';
 })
 export class HomePage {
 
-  seasons:any[] = [];
+  seasons: any[] = [];
+  season: any;
   
   constructor(
     public navCtrl: NavController,
@@ -20,6 +21,7 @@ export class HomePage {
     private admobFree: AdMobFree
   ) {
     this.getSeason();
+    this.getCurrentSeason();
 
     platform.ready().then(() => {
       const bannerConfig: AdMobFreeBannerConfig = {
@@ -39,6 +41,16 @@ export class HomePage {
     this.prismic.getDocumentsByType('season')
     .then(response => {
       this.seasons = response;
+    })
+    .catch(e => {console.log(e)});
+  }
+
+  getCurrentSeason(): void {
+    this.prismic.getCurrentSeason()
+    .then(response => response[0].data
+    )
+    .then(data => {
+      this.season = data;
     })
     .catch(e => {console.log(e)});
   }

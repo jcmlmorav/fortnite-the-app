@@ -14,14 +14,27 @@ export class PrismicProvider  {
 
   apiEndpoint:string = 'https://fortnite-week-mission-app.cdn.prismic.io/api/v2';
 
-  getDocumentsByType(type:any) {    	
+  getDocumentsByType(type:any) {
     return Prismic.getApi(this.apiEndpoint).then(function(api:any) {
       return api.query(
         Prismic.Predicates.at('document.type', type),
         { orderings : '[document.first_publication_date]' }
       );
-    }).then(function(response) {          
-      return response.results;         
+    }).then(function(response) {
+      return response.results;
+    }, function(err) {
+      console.log("Something went wrong: ", err);
+    });
+  }
+
+  getCurrentSeason() {
+    return Prismic.getApi(this.apiEndpoint).then(function(api:any) {
+      return api.query(
+        Prismic.Predicates.at('document.type', 'season_to_show'),
+        { orderings : '[document.first_publication_date]' }
+      );
+    }).then(function(response) {
+      return response.results;
     }, function(err) {
       console.log("Something went wrong: ", err);
     });

@@ -25,16 +25,14 @@ export class HomePage {
 
     platform.ready().then(() => {
       const bannerConfig: AdMobFreeBannerConfig = {
-        // add your config here
-        // for the sake of this example we will just use the test config
         id: 'ca-app-pub-5032531825945091/6954605640',
-        isTesting: true,
+        isTesting: false,
         autoShow: true
       };
       this.admobFree.banner.config(bannerConfig);
       
       this.admobFree.banner.prepare().catch(e => {console.log(e)});
-    }).catch(e => {console.log(e)});;
+    }).catch(e => {console.log(e)});
   }
 
   getSeason(): void {

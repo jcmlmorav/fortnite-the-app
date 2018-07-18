@@ -1,13 +1,46 @@
 page-home {
   .season-title {
     margin-bottom: 0;
-    position: absolute;
+    margin-top: 0;
     text-transform: uppercase;
 
     span {
       background-color: color($colors, primary);
       font-family: Burbank, sans-serif;
-      padding: 15px 30px;
+      padding: 2px 0;
+      width: 100%;
+      text-align: center;
+      display: block;
     }
+  }
+}
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+
+  .list {
+    .item {
+      padding-left: 5px !important;
+
+      .item-inner {
+        margin-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.star {
+  &__icon {
+    display: block;
+    width: 30px;
+  }
+
+  &__value {
+    color: #e18a00;
+    display: block;
+    font-family: Burbank, sans-serif;
+    font-size: 24px;
+    text-align: center;
   }
 }

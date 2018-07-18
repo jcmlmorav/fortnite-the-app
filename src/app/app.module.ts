@@ -9,13 +9,14 @@ import { AboutPage } from '../pages/about/about';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { PrismicProvider } from '../providers/prismic/prismic';
-
 import { HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material';
 
 import { AdMobFree } from '@ionic-native/admob-free';
+import { PrismicProvider } from '../providers/prismic/prismic';
+import { LanguageProvider } from '../providers/language/language';
+import { Globalization } from '@ionic-native/globalization';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,8 @@ import { AdMobFree } from '@ionic-native/admob-free';
     AdMobFree,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PrismicProvider,
+    Globalization,
+    LanguageProvider,
     HttpClient
   ]
 })

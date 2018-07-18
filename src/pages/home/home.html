@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><span class="fortnite-name">Fortnite: The App</span></ion-title>
+    <ion-title><span class="fortnite-name">Fortnite Challenges</span></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -22,11 +22,16 @@
         </mat-expansion-panel-header>
         <ion-list>
           <ion-item text-wrap *ngFor="let singleChallenge of season.data['challenges']">
-            <!-- <ion-icon name="star" color="secondary" item-start></ion-icon> -->
+            <ion-icon name="" color="primary" item-start>
+              <img *ngIf="singleChallenge.pase_type == 'Free'" class="star__icon" src="/assets/imgs/book-free.png" />
+              <img *ngIf="singleChallenge.pase_type == 'Pay'" class="star__icon" src="/assets/imgs/book-pass.png" />
+            </ion-icon>
             <h2>{{ singleChallenge.challenge }}</h2>
             <p><strong>Difficult:</strong> {{ singleChallenge.difficult }}</p>
-            <p><strong>Reward:</strong> {{ singleChallenge.reward }}</p>
-            <!-- <ion-icon name="eye" color="secondary" item-end></ion-icon> -->
+            <ion-icon class="star" name="" color="primary" item-end>
+              <span class="star__value">{{singleChallenge.reward}}</span>
+              <img class="star__icon" src="/assets/imgs/fortnite-star.png" />
+            </ion-icon>
           </ion-item>
         </ion-list>
       </mat-expansion-panel>

@@ -84,5 +84,5 @@
     <plugin name="cordova-plugin-admob-free" spec="^0.17.0" />
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
     <allow-navigation href="http://192.168.1.57:8101" />
-    <engine name="android" spec="7.0.0" />
+    <engine name="android" spec="~7.0.0" />
 </widget>

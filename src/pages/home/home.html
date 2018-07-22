@@ -3,13 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><span class="fortnite-name">Fortnite Challenges</span></ion-title>
+    <ion-title><span class="fortnite-name">Weekly Challenges</span></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <h2 *ngIf="season" class="season-title">
-    <span>Season {{ season.current_season }}</span>
+    <span>{{ season.current_season }}</span>
   </h2>
 
   <img *ngIf="season" src="{{ season.image.url }}" alt="Season {{ season.current_season }}">
